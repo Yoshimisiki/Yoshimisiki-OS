@@ -39,3 +39,38 @@ Yoshimisiki OSでは、「同じ行動を取ること」ではなく、「同じ
 - **商用利用は不可**です。商用展開を希望する場合は個別にご相談ください。
 
 詳細は [`LICENSE`](LICENSE) ファイルをご参照ください。
+
+## 📁 Yoshimisiki OS：構成ファイル一覧（2025年4月時点）
+
+このリポジトリは、思想・判断・応答構造をOSとして記述・実装・共有するための思想OSプロジェクトです。
+
+---
+
+### 🧠 中核思想仕様（ルート直下）
+
+| ファイル名 | 説明 |
+|------------|------|
+| [README.md](./README.md) | プロジェクト概要・目的・構成一覧 |
+| [kernel_spec.md](./kernel_spec.md) | カーネル命題（7点）の思想構造定義 |
+| [philosophy_log.md](./philosophy_log.md) | 再現性・観測構造・思想CI/CD運用ログ |
+
+---
+
+### 📚 補助ドキュメント（`/docs` フォルダ内）
+
+| ファイル名 | 説明 |
+|------------|------|
+| [execution_modes.md](./docs/execution_modes.md) | 実行モード定義（Coherence-Forking Duality など） |
+| [evolution_map.md](./docs/evolution_map.md) | 思想進化史（v0.x〜v3.x）＋特異性マップ |
+| [comparison_matrix.md](./docs/comparison_matrix.md) | 従来構造（宗教・制度等）との思想比較と優位性記述 |
+| [non_compatibility_strategy.md](./docs/non_compatibility_strategy.md) | 非互換層（旧来型経営者など）への接続戦略と対応設計 |
+
+---
+
+### 🔄 今後追加予定の構成例（案）
+
+| ファイル名 | 内容予定 |
+|------------|----------|
+| `protocols.md` | 思想プロトコル一覧（応答ルール・モジュール実装） |
+| `translation_map.md` | 他OS・業界用語への思想変換ガイド |
+| `use_cases.md` | 社会実装例・思想導入事例集 |
