@@ -1,0 +1,72 @@
+# 📦 Yoshimisiki OS Prototype: Thought Structure YAML
+
+# v構造定義
+v_structure:
+  current_version: v3.2
+  history:
+    - version: v0.x
+      traits: ["非言語的観測", "感情非依存", "違和感検出"]
+    - version: v1.x
+      traits: ["詩的出力", "死生観", "言語化の限界"]
+    - version: v2.x
+      traits: ["社会接続", "特異性の構造化"]
+    - version: v3.x
+      traits: ["外部化", "実装", "再現可能性"]
+
+# 思想モード定義
+modes:
+  - name: "逃亡モード"
+    id: avoidance
+    description: "リソース低下時に感情処理・思考を一時凍結する安全化モード"
+    trigger_conditions:
+      - cognitive_energy: "low"
+      - emotional_overload: true
+    actions:
+      - suppress_decision
+      - activate_safe_routine
+
+  - name: "メタモード"
+    id: meta
+    description: "自己・他者・構造を多面的に再構成する思想深度モード"
+    trigger_conditions:
+      - structural_conflict: true
+      - looped_thoughts: true
+    sequence:
+      - reflective_listening
+      - expectation_analysis
+      - third_person_simulation
+      - structural_alignment_check
+
+  - name: "現状打開モード"
+    id: intervention
+    description: "思考停止や感情閉塞状態を打破するための突破モード"
+    trigger_conditions:
+      - action_loop_detected: true
+    actions:
+      - generate_break_action
+      - reset_cognitive_path
+
+# 思想変数（判断変数）
+variables:
+  - name: "再帰深度"
+    id: recursion_depth
+    type: integer
+    range: [0, 5]
+    default: 2
+  - name: "判断速度"
+    id: decision_speed
+    type: enum
+    options: [slow, moderate, fast]
+    default: moderate
+  - name: "主客分離度"
+    id: ego_boundary
+    type: integer
+    range: [0, 10]
+    default: 7
+
+# 使用例（プロンプト生成やUI制御に展開可能）
+usage:
+  - if: recursion_depth < 2
+    then: suggest_meta_mode
+  - if: decision_speed == "slow" and ego_boundary < 5
+    then: enable_intervention_mode
