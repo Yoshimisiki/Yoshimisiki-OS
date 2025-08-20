@@ -26,6 +26,7 @@
 
 - [思想構造ログ](philosophy_log.md)
 - [思想カーネル仕様](kernel_spec.md)
+-  [誠実プロトコル（Protocol of Integrity）](docs/protocol_integrity.md)
 - [v3.x 社会実装ログ一覧](logs/v3x/README.md)
 - [ドキュメント目次（SUMMARY.md）](SUMMARY.md)
 
