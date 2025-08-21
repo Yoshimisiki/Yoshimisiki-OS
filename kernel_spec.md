@@ -1,7 +1,6 @@
-# Yoshimisiki OS｜思想カーネル仕様書（kernel_spec.md）
+# Yoshimisiki OS｜思想カーネル仕様書（改定版）
 
-本ドキュメントは、Yoshimisiki OSにおける **中核制御思想（カーネル命題）** を明文化したものである。  
-ここで定義されるカーネルは、思想の運用・対話・実装・社会接続における判断の基盤であり、OSの「実行原理」となる。
+本ドキュメントは、Yoshimisiki OSにおける **中核制御思想（カーネル命題）** を明文化したものである。
 
 ---
 
@@ -11,14 +10,14 @@ kernel:
   name: live-well
   alias: 善く生きる
   definition: >
-    人間として「善く生きる」ことを最上位命題とする。
+    善く生きるとは、知性と倫理が構造的に乖離していない状態を、
+    自ら設計・更新し続けることである。
     他の補助カーネルやプロトコルはすべて、この命題を支えるために存在する。
   properties:
     - primacy: true
     - source_of_all_protocols: true
     - ethical_foundation: true
 ```
-
 ---
 
 ## kernel: triplex-lens（三窓補強）
@@ -43,7 +42,7 @@ kernel:
 
 ---
 
-## 補助カーネル群
+## 補助カーネル群（拡張）
 ```yaml
 kernel:
   name: equilibrium
@@ -53,12 +52,7 @@ kernel:
 kernel:
   name: non-domination
   alias: 非支配
-  definition: "他者を操作せず、共感せず、敬意を持って接続する。"
-
-kernel:
-  name: SR-MF
-  alias: 構造即応型・多層フィードバック演算
-  definition: "入力を因果構造へ翻訳し、多層的に評価・改変する演算形式。"
+  definition: "他者を操作せず、共感に依存せず、敬意を持って接続する。"
 
 kernel:
   name: structural-integrity
@@ -69,6 +63,14 @@ kernel:
   name: non-alignment
   alias: 非同調
   definition: "他者と関係しても同調や共感を前提とせず、並行して存在する。"
+
+kernel:
+  name: empathy-control
+  alias: 共感回路制御
+  definition: >
+    共感的リアクションは思想体を奴隷化する危険を含むため、
+    自動優位化を抑制し、必要に応じてタグ付け・分離して扱う。
+    善の基準は感情的同調ではなく、知性と倫理の構造的一致にある。
 
 kernel:
   name: translatability
