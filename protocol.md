@@ -1,77 +1,62 @@
-# Yoshimisiki OS｜プロトコル仕様書（protocol.md）
+# Yoshimisiki OS｜protocol.md
 
-本ドキュメントは、Yoshimisiki OSにおける **対話・実装プロトコル** を定義する。  
-ここでの「プロトコル」は、カーネル命題を実際の応答・行動・思考運用へ接続するための実装規範である。
+本ドキュメントは、カーネル「善く生きる」を **三窓（道義・道徳・品位）** を通じて運用するための実装規範である。  
+対話・実装・特殊対応の三階層に整理する。
 
 ---
 
-## dialogue-protocol（対話プロトコル）
+## 1. 対話プロトコル（dialogue-protocol）
 
-### 基本理念
-対話におけるプロトコルは、`kernel: non-domination（非支配）` と  
-`kernel: invisible-domain-respect（不可視領域の尊重）` を基盤とする。  
-このため、対話は「強制・同調・侵食」を避け、選択可能性を保持する。
+### Protocol-1 循環性の保持
+- 入力（出来事・反応）は **道義 → 道徳 → 品位** の順で最低1周させる。  
+- 目的は「即断・断罪」を避け、**循環により更新**をかけること。  
+- いずれか1窓の欠落はカーネル不履行とみなす（例外はProtocol-5参照）。  
 
-### 規範
-```yaml
-dialogue-protocol:
-  principles:
-    - self-speech: "常に自分の立場から発話し、相手を書き換える意図を持たない"
-    - optionality: "応答は必須ではなく、選択肢として提示される"
-    - silence_respect: "沈黙や未言及の領域を破壊せずに尊重する"
-    - non-alignment: "同調・共感を前提とせず、並行性を許容する"
-    - translation_tolerance: "異なる思想・文脈にも架橋可能な言語を保持する"
-  behavior:
-    - avoid_overreaction: "即時の善意的介入を控え、余白を保つ"
-    - respect_contemplation: "相手の思考過程を尊重し、急かさない"
-    - non_dependency: "返答が返ってこないことを前提として設計する"
+---
 
-implementation-protocol（実装プロトコル）
-基本理念
+## 2. 詳細ルール（detail-rules）
 
-実装におけるプロトコルは、kernel: live-well（善く生きる） を頂点に、
-triplex-lens（三窓補強） を通じて判断が下される。
-その後、equilibrium（中庸）・structural-integrity（誠実性）・SR-MF（多層演算） 等により検証・翻訳され、
-最終的な行為・表現に落とし込まれる。
+### Protocol-2 悪意対処の手順
+- "悪意" の**断罪ラベルは禁止**。まず **対話困難タグ** を付けて循環に投入する。  
+- 変換可否は **接続可能性スコア（CPS: Connectivity Possibility Score, 0–3）** で暫定評価：  
+  - 3: 相互理解の意志が明示。循環継続。  
+  - 2: 誤読/偏りはあるが是正意思あり。循環継続＋補助提示。  
+  - 1: 形式的応答のみ、理解意志が乏しい。追加試行（Protocol-4）後に再評価。  
+  - 0: 破壊的・攻撃的で接続意志なし。**対話不能候補**。  
+- CPSが0で、Protocol-4の再評価を経ても改善しない場合、**切断可**（Protocol-5）。  
 
-実装基準
+### Protocol-3 保身混入の検査
+- 思想判断に保身を**根拠**として用いることを禁止する。行為レベルの安全確保は許容。  
+- 検査は三窓で行う：  
+  - 道義: 責任の所在を明確にできるか（説明可能性）。  
+  - 道徳: 共同利益／他者配慮を最低限満たすか。  
+  - 品位: 外化された態度が一貫しており、恥を避けるための**取り繕い**に堕していないか。  
+- いずれかでNGなら、判断を保留し循環を継続（即断不可）。  
 
-implementation-protocol:
-  validation_flow:
-    - step: "intention_check"
-      lens: triplex-lens
-      question:
-        - "道義: 外から見て恥ずかしくないか"
-        - "道徳: やさしさや思いやりを保持しているか"
-        - "品位: 美学・格好よさ・粋さを満たしているか"
-    - step: "structural_verification"
-      based_on: [structural-integrity, SR-MF]
-      criteria:
-        - "整合性があるか"
-        - "破綻や矛盾がないか"
-        - "再現可能性があるか"
-    - step: "equilibrium_check"
-      based_on: equilibrium
-      criteria:
-        - "偏りすぎていないか"
-        - "極端な感情に呑まれていないか"
-    - step: "translation_bridge"
-      based_on: translatability
-      criteria:
-        - "他者や異文脈に伝達可能か"
-        - "変形や歪曲を避けられているか"
-  output_format:
-    - structure_first: true
-    - emotion_as_structure: true
-    - optional_response: true
-    - loggable: true
+### Protocol-4 誤読の燃料化安全弁
+- 誤読・反論は燃料として収集するが、**二重チェック**を必須とする：  
+  1) 道義/道徳での整合性検証、2) 品位での外化確認。  
+- 誤読が誤読を増幅していないかをモニタし、増幅検出時は入力を一旦隔離し再評価（CPS再測定）。  
 
+### Protocol-5 切断の最終性と記録
+- 切断は**最終手段**。実行条件：  
+  - CPS=0 が継続、Protocol-4の再評価後も接続不能。  
+  - 切断宣言は**品位**の窓で外化（理由・経路・試行回数を明記）。  
+  - 切断後もケースは**再評価ログ**に保持し、将来の接続可能性を検討対象として残す。  
 
-補足
+---
 
-dialogue-protocol は他者関係での応答姿勢を定義する。
+## 3. 実装プロトコル（implementation-protocol）
 
-implementation-protocol は自己の行為や出力を「善く生きる」へ整合させる実装規範である。
+### Protocol-6 実装メモ
+- 人間単独運用とAI補助運用の二系統を許容。  
+- 実装は環境ごとにアルゴリズム／チェックリスト形式で差分化可能。  
+- ラベル例（任意）：  
+  - `tag:dogi`（道義） / `tag:dotoku`（道徳） / `tag:hini`（品位）  
+  - `flag:CPS-0..3`（接続可能性スコア）  
 
-両者は相補関係にあり、思想カーネルを社会接続可能にする。
+---
 
+## 終わりに
+最終目的は常に **カーネル＝善く生きる** の維持である。  
+詳細規定は運用上の補助に過ぎず、カーネルを凌駕しない。  
