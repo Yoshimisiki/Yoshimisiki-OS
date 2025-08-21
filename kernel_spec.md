@@ -1,4 +1,4 @@
-# Yoshimisiki OS｜思想カーネル仕様書（改定版）
+# Yoshimisiki OS｜思想カーネル仕様書
 
 本ドキュメントは、Yoshimisiki OSにおける **中核制御思想（カーネル命題）** を明文化したものである。
 
