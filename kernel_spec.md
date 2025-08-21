@@ -1,39 +1,50 @@
-Yoshimisiki OS｜思想カーネル仕様書（kernel_spec.md）
+# Yoshimisiki OS｜思想カーネル仕様書（kernel_spec.md）
 
-本ドキュメントは、Yoshimisiki OS における 中核制御思想（カーネル命題） を明文化したものである。
-ここで定義されるカーネルは、思想の運用・対話・実装・社会接続における判断の基盤であり、OS の「実行原理」となる。
+本ドキュメントは、Yoshimisiki OSにおける **中核制御思想（カーネル命題）** を明文化したものである。  
+ここで定義されるカーネルは、思想の運用・対話・実装・社会接続における判断の基盤であり、OSの「実行原理」となる。
 
-kernel: live-well（善く生きる）
+---
+
+## kernel: live-well（善く生きる）
+```yaml
 kernel:
   name: live-well
   alias: 善く生きる
   definition: >
     人間として「善く生きる」ことを最上位命題とする。
-    他のすべての補助カーネルやプロトコルは、この命題を支えるために存在する。
+    他の補助カーネルやプロトコルはすべて、この命題を支えるために存在する。
   properties:
     - primacy: true
     - source_of_all_protocols: true
     - ethical_foundation: true
+```
 
-triplex-lens（三窓補強）
+---
+
+## kernel: triplex-lens（三窓補強）
+```yaml
 kernel:
   name: triplex-lens
   alias: 三窓補強
   definition: >
-    「善く生きる」を実際の判断において補強する三視座。
-    各行為が健全か、倫理的か、美的かを自己内で検証する。
+    「善く生きる」を内的に補強するための三視座。
+    行為の健全性・倫理性・美的価値を自己内で検証する。
   windows:
     - name: dōgi (道義)
       definition: "外から見て恥ずかしくないかを問う規範審級"
       english: "moral propriety"
     - name: dōtoku (道徳)
-      definition: "思いやり・やさしさを保持しているかを問う倫理審級"
+      definition: "やさしさ・思いやりを保持しているかを問う倫理審級"
       english: "morality / ethics"
     - name: hin'i (品位)
-      definition: "格好よさ・粋さ・美学を満たしているかを問う美的審級"
+      definition: "美学・格好よさ・粋さを満たしているかを問う美的審級"
       english: "dignity / aesthetic integrity"
+```
 
-auxiliary-kernels（補助カーネル群）
+---
+
+## 補助カーネル群
+```yaml
 kernel:
   name: equilibrium
   alias: 中庸
@@ -68,3 +79,4 @@ kernel:
   name: invisible-domain-respect
   alias: 不可視領域の尊重
   definition: "語られないものを破壊せず保持する。空白を思想の一部とする。"
+```
